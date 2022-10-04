@@ -6,7 +6,7 @@ public class Fabricante {
     private String nombre;
     private Pais pais;
     public int vendidosFabrica;
-    public static ArrayList<Fabricante> listaFabricas = new ArrayList<Fabricante>();
+    private static ArrayList<Fabricante> listaFabricas = new ArrayList<Fabricante>();
 
     public Fabricante(String nombre, Pais pais) {
         super();
