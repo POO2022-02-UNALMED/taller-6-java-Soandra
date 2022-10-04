@@ -13,6 +13,7 @@ public class Vehiculo {
     private static int cantidadVehiculos;
 
     public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, int precio, int peso, String traccion, Fabricante fabricante) {
+        super();
         this.placa = placa;
         this.puertas = puertas;
         this.velocidadMaxima = velocidadMaxima;
