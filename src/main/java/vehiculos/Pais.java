@@ -4,48 +4,43 @@ import java.util.ArrayList;
 
 public class Pais {
     private String nombre;
-    public int unidadesPais = 0;
-    private static ArrayList<Pais> listaPaises = new ArrayList<>();
+    public int vendidos=0;
+    public static ArrayList<Pais> listaPaises = new ArrayList<Pais>();
 
     public Pais(String nombre) {
+        super();
         this.nombre = nombre;
+        this.vendidos = 0;
         listaPaises.add(this);
     }
 
-    public static Pais  paisMasVendedor(){
-        Pais paisMayor = null;
-        int contador = 0;
-        for (int i = 0; i < listaPaises.size(); i++) {
-            if (listaPaises.get(i).unidadesPais > contador){
-                contador = listaPaises.get(i).unidadesPais;
-                paisMayor = listaPaises.get(i);
+    public static Pais paisMasVendedor() {
+        Pais vendedor = null;
+        int vendidos=0;
+        for (Pais pais: listaPaises) {
+            if(pais.vendidos>vendidos) {
+                vendidos = pais.vendidos;
+                vendedor = pais;
             }
         }
-        return paisMayor;
+        return vendedor;
     }
 
-    //getters y setters
+    //Getters y Setters
+
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public int getUnidadesPais() {
-        return unidadesPais;
+    public int getVendidos() {
+        return vendidos;
+    }
+    public void setVendidos(int vendidos) {
+        this.vendidos = vendidos;
     }
 
-    public void setUnidadesPais(int unidadesPais) {
-        this.unidadesPais = unidadesPais;
-    }
 
-    public static ArrayList<Pais> getListaPaises() {
-        return listaPaises;
-    }
 
-    public static void setListaPaises(ArrayList<Pais> listaPaises) {
-        Pais.listaPaises = listaPaises;
-    }
 }
